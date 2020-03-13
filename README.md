@@ -9,12 +9,12 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm devstart
+npm run devstart
 ```
 
 ### Compiles and minifies for production
 ```
-npm satrt
+npm run satrt
 ```
 
 
