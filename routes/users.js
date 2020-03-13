@@ -27,19 +27,18 @@ router.get('/list',(req, res, next) =>{
 });
 
 router.get('/:id',(req, res, next) =>{
-  const lastIndexOf = req.path.lastIndexOf("/")
-  const id = Number(req.path.substr(lastIndexOf + 1))
 
+  const id  = req.params.id
   service.queryById(id).then(result =>{
-    res.send(JSON.stringify(result))
+    res.json(JSON.stringify(result))
   })
 
 });
 
 
 router.delete('/delete/:id',(req, res, next) =>{
-  const lastIndexOf = req.path.lastIndexOf("/")
-  const id = req.path.substr(lastIndexOf + 1)
+
+  const id  = req.params.id
   console.log('物理删除',id)
   service.deleteUser(id).then(result =>{
     res.send(JSON.stringify(result))
@@ -51,8 +50,9 @@ router.delete('/delete/:id',(req, res, next) =>{
 
 router.put('/delete/:id',(req, res, next) =>{
 
-  const lastIndexOf = req.path.lastIndexOf("/")
-  const id = req.path.substr(lastIndexOf + 1)
+
+  const id  = req.params.id
+
   console.log('逻辑删除',id)
   service.updateUserStatu(id).then(result =>{
     res.send(JSON.stringify(result))
