@@ -1,0 +1,3 @@
+[submodule "node-demo"]
+	path = node-demo
+	url = https://github.com/jingxianliu/node-test.git
